@@ -57,15 +57,15 @@ const mockJobs: Job[] = [
 const Jobs = ({ user }: JobsProps) => {
   const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
-  const [locationFilter, setLocationFilter] = useState("");
-  const [typeFilter, setTypeFilter] = useState("");
+  const [locationFilter, setLocationFilter] = useState("all");
+  const [typeFilter, setTypeFilter] = useState("all");
   const [jobs] = useState<Job[]>(mockJobs);
 
   const filteredJobs = jobs.filter(job => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          job.company.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesLocation = !locationFilter || job.location.toLowerCase().includes(locationFilter.toLowerCase());
-    const matchesType = !typeFilter || job.type === typeFilter;
+    const matchesLocation = locationFilter === 'all' || job.location.toLowerCase().includes(locationFilter.toLowerCase());
+    const matchesType = typeFilter === 'all' || job.type === typeFilter;
     
     return matchesSearch && matchesLocation && matchesType;
   });
@@ -130,7 +130,7 @@ const Jobs = ({ user }: JobsProps) => {
                     <SelectValue placeholder="Location" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Locations</SelectItem>
+                    <SelectItem value="all">All Locations</SelectItem>
                     <SelectItem value="san francisco">San Francisco</SelectItem>
                     <SelectItem value="new york">New York</SelectItem>
                     <SelectItem value="remote">Remote</SelectItem>
@@ -144,7 +144,7 @@ const Jobs = ({ user }: JobsProps) => {
                     <SelectValue placeholder="Job Type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Types</SelectItem>
+                    <SelectItem value="all">All Types</SelectItem>
                     <SelectItem value="full-time">Full-time</SelectItem>
                     <SelectItem value="part-time">Part-time</SelectItem>
                     <SelectItem value="contract">Contract</SelectItem>
