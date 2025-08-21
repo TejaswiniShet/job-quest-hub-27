@@ -20,9 +20,9 @@
     --popover-foreground: 215 25% 27%;
 
     /* Brand colors - Professional blue theme */
-    --primary: 217 91% 60%;
+    --primary: 217 91% 70%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 55%;
+    --primary-hover: 217 91% 65%;
 
     /* Secondary system */
     --secondary: 215 20% 65%;
@@ -51,11 +51,11 @@
     --ring: 217 91% 60%;
 
     /* Enhanced Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 45%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 70%) 0%, hsl(217 91% 55%) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(215 20% 65%) 0%, hsl(215 20% 50%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 45%) 50%, hsl(142 71% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 70%) 0%, hsl(217 91% 55%) 50%, hsl(142 71% 45%) 100%);
     --gradient-background: linear-gradient(135deg, hsl(217 91% 97%) 0%, hsl(215 20% 98%) 50%, hsl(142 71% 97%) 100%);
-    --gradient-mesh: radial-gradient(circle at 20% 80%, hsla(217, 91%, 60%, 0.12) 0%, transparent 50%),
+    --gradient-mesh: radial-gradient(circle at 20% 80%, hsla(217, 91%, 70%, 0.12) 0%, transparent 50%),
                      radial-gradient(circle at 80% 20%, hsla(142, 71%, 45%, 0.12) 0%, transparent 50%);
 
     /* Shadows */
@@ -144,7 +144,7 @@
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(circle at 25% 25%, hsla(217, 91%, 60%, 0.05) 0%, transparent 25%),
+      radial-gradient(circle at 25% 25%, hsla(217, 91%, 70%, 0.05) 0%, transparent 25%),
       radial-gradient(circle at 75% 75%, hsla(142, 71%, 45%, 0.05) 0%, transparent 25%);
     background-size: 800px 800px;
     animation: float 20s ease-in-out infinite;
@@ -189,17 +189,17 @@
     @apply -translate-y-1;
     box-shadow: var(--shadow-lg);
     background: hsla(0, 0%, 100%, 0.95);
-    border-color: hsla(217, 91%, 60%, 0.3);
+    border-color: hsla(217, 91%, 70%, 0.3);
   }
 
   /* Custom button variants */
   .btn-hero {
     @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-200;
-    box-shadow: 0 4px 12px hsla(217, 91%, 60%, 0.3);
+    box-shadow: 0 4px 12px hsla(217, 91%, 70%, 0.3);
   }
   
   .btn-hero:hover {
-    box-shadow: 0 6px 20px hsla(217, 91%, 60%, 0.4);
+    box-shadow: 0 6px 20px hsla(217, 91%, 70%, 0.4);
     transform: translateY(-1px);
   }
   
